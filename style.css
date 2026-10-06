@@ -1,0 +1,139 @@
+/* Neumorphic Color Scheme & Setup */
+:root {
+  --bg-color: #e0e5ec;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  
+  /* Neumorphic Shadows (Extruded Outward) */
+  --shadow-out: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  --shadow-out-sm: 4px 4px 10px #bebebe, -4px -4px 10px #ffffff;
+  
+  /* Neumorphic Shadows (Inset / Inward) */
+  --shadow-in: inset 5px 5px 10px #bebebe, inset -5px -5px 10px #ffffff;
+  
+  /* Vibrant Accent Gradient */
+  --primary-gradient: linear-gradient(135deg, #6366f1, #a855f7);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+/* Container Card */
+main, .container {
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  padding: 2.5rem 2rem;
+  border-radius: 30px;
+  box-shadow: var(--shadow-out);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Header */
+header, .header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1a202c;
+  margin-bottom: 0.25rem;
+}
+
+header p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Extruded Sections */
+section, .card {
+  background-color: var(--bg-color);
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-out-sm);
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+/* Inset Neumorphic Inputs */
+input[type="text"], 
+textarea, 
+select {
+  width: 100%;
+  background-color: var(--bg-color);
+  border: none;
+  outline: none;
+  padding: 0.9rem 1.25rem;
+  border-radius: 50px; /* Soft pill-shaped inputs */
+  color: var(--text-main);
+  font-size: 0.95rem;
+  box-shadow: var(--shadow-in);
+  transition: all 0.3s ease;
+}
+
+textarea {
+  border-radius: 20px;
+}
+
+input[type="text"]::placeholder,
+textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Gradient Action Button */
+button, input[type="submit"] {
+  width: 100%;
+  background: var(--primary-gradient);
+  color: #ffffff;
+  border: none;
+  padding: 0.9rem 1.5rem;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 4px 6px 15px rgba(99, 102, 241, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover, input[type="submit"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 4px 8px 20px rgba(99, 102, 241, 0.45);
+}
+
+button:active, input[type="submit"]:active {
+  transform: translateY(1px);
+}
+
+/* Neumorphic Filter/Tab Buttons */
+.tab-button, .category-btn {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  border-radius: 50px;
+  padding: 0.6rem 1.2rem;
+  box-shadow: var(--shadow-out-sm);
+}
+
+.tab-button.active {
+  background: var(--primary-gradient);
+  color: #ffffff;
+  box-shadow: var(--shadow-in);
+}
